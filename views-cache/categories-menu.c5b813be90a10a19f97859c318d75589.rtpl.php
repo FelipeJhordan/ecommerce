@@ -1,0 +1,1 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/category/6">Artes </a></li><li><a href="/category/3">Design</a></li><li><a href="/category/4">Ferramenta</a></li><li><a href="/category/8">Games</a></li><li><a href="/category/5">Licença</a></li><li><a href="/category/7">Software</a></li>
