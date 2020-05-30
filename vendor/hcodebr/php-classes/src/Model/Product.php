@@ -37,6 +37,9 @@
            }
            return $list;
         }
+
+       
+
         public function get($idproduct) { 
             $sql = new Sql();
 
