@@ -2,6 +2,7 @@
     use \Hcode\Page;
     use \Hcode\Model\Product;
     use \Hcode\Model\Category;
+    use \Hcode\Model\Cart;
     $app->get('/', function() {
     $products = Product::listAll();
     $page  = new Page();
@@ -44,5 +45,16 @@ $app->get("/products/:desurl", function($desurl) {
         'categories'=> $product->getCategories()
     ]);
 } );
-
+    $app->get('/logout',function(){
+        User::logout();
+        Cart::removeFromSession();
+        session_regenerate_id();
+        header("Location:  /login");
+        exit;
+    });
+    $app->get("/cart", function() {
+        $cart = Cart::getFromSession();
+        $page = new Page();
+        $page->setTpl("cart");
+    });
 ?>
