@@ -205,13 +205,13 @@
                 $_SESSION[Cart::SESSION_ERROR] = NULL;
             }
 
-            public static function formatValueToDecimal($value):float {
+            public static function formatValueToDecimal(string $value):float {
                 $value = str_replace('.','',$value);
                 return str_replace(',','.',$value);
             }
 
             public function updateFreight() {
-                if($this->getdeszipcode()!= ''){
+                if($this->getdeszipcode()!= '' ){
                     $this->setFreight($this->getdeszipcode());
             }
             }

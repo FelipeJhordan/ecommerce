@@ -22,6 +22,7 @@
 
 		Tpl::configure( $config );
 		$this->tpl = new Tpl();
+		
 		$this->setData($this->options["data"]);
 		if($this->options["header"])$this->tpl->draw("header");
 		}
