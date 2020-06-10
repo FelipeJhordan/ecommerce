@@ -176,6 +176,7 @@ $app->get("/products/:desurl", function($desurl) {
               exit;
         }
         $user = new User();
+        $_SESSION['registerValues'] = null;
         $user->setData([
             'inadmin'=> 0,
             'deslogin'=>$_POST['email'],
@@ -190,5 +191,66 @@ $app->get("/products/:desurl", function($desurl) {
         User::login($_POST['email'],$_POST['password']);
         header('Location: /checkout');
         exit;
-    })
+    });
+
+    // Rota para "Esqueci minha senha"
+$app->get("/forgot", function () {
+    $page = new Page();
+    $page->setTpl("forgot");
+});
+
+$app->post("/forgot", function () { 
+ 
+
+    $user = User::getForgot(   $_POST["email"],false );
+
+    header("Location: /forgot/sent");
+    exit;
+});
+
+$app->get("/forgot/sent", function(){
+    $page = new Page();
+    $page->setTpl("forgot-sent");
+});
+
+$app->get("admin/forgot/reset", function(){
+
+	$user = User::validForgotDecrypt($_GET["code"]);
+
+	$page = new Page([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+	$page->setTpl("forgot-reset", array(
+		"name"=>$user["desperson"],
+		"code"=>$_GET["code"]
+	));
+
+});
+
+$app->post("/forgot/reset",function() {
+    
+    $forgot = User::validForgotDecrypt($_POST["code"]);	
+
+	User::setForgotUsed($forgot["idrecovery"]);
+
+	$user = new User();
+
+	$user->get((int)$forgot["iduser"]);
+
+	// $password = User::getPasswordHash();
+
+    $password = password_hash($_POST["password"],PASSWORD_DEFAULT,[
+        "cost"=>12
+    ]);
+	$user->setPassword($password);
+	$page = new Page([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+	$page->setTpl("forgot-reset-success");
+
+});
 ?>
