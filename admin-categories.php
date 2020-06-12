@@ -18,7 +18,7 @@
             $pagination = Category::getPage($page,5);
         }
         for ($x = 0 ; $x < $pagination['pages']; $x++){
-            array_push($pages,['href' => '/admin/users?'.http_build_query([
+            array_push($pages,['href' => '/admin/categories?'.http_build_query([
                 'page' => $x+1,
                 'search' => $search
             ]), 'text' => $x+1
