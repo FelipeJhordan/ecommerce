@@ -114,6 +114,7 @@
                      ':idproduct'=>$product->getidproduct()
                 ]);
             }
+            
             $this->getCalculateTotal();
         }
         
