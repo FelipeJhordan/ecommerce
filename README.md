@@ -39,7 +39,7 @@ Template usado no projeto [Almsaeed Studio](https://almsaeedstudio.com)
 ![image](https://user-images.githubusercontent.com/44248690/84577197-9ed6e200-ad90-11ea-8e8b-f52462db6525.png)
 ![Hcode](https://user-images.githubusercontent.com/44248690/84577173-53bccf00-ad90-11ea-914d-51fdf300cc36.PNG)
 
-**OBS Slider com os produtos não implementado ** 
+**OBS Slider com os produtos não implementado** 
 
 ###                                   Login e Cadastrar
 ![login](https://user-images.githubusercontent.com/44248690/84577236-f83f1100-ad90-11ea-9a4a-4bcebe9ab25e.png)
