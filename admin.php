@@ -9,7 +9,11 @@
         $page->setTpl("index");
         
     });
-    
+    $app->get('/admin/index2.html',function(){
+         User::verifyLogin();
+         $page  = new PageAdmin();
+         $page->setTpl("index");
+    });
     $app->get('/admin/login', function() {
         $page = new PageAdmin([
             "header"=> false,
