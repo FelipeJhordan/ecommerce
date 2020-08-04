@@ -18,7 +18,7 @@ Projeto desenvolvido do zero no [Curso de PHP 7](https://www.udemy.com/curso-com
    - Paypal
    
 ## Organização dos diretórios 
-   - O index.php está dentro da pasta principal do projeto, contendo referência as rotas e iniciando o App atravéis do Slim.
+   - O index.php está dentro da pasta principal do projeto, contendo referência as rotas e iniciando o App através do Slim.
    - As Classes estão dentro da pasta Vendor\HcodeBr\php-classes.
    - As rotas estão contidas no diretório principal do projeto.
    - Os arquivos HTML estão contidos dentro da pasta VIEWS e o cache requisitado pelo Rain está contido no .\views-cache.
